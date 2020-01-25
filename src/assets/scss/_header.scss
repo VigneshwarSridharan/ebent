@@ -1,0 +1,103 @@
+.header-top {
+    border-top: solid 6px $primary;
+    .header-top-content {
+        padding: 2rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        .brand-logo {
+            overflow: hidden;
+            margin: 0 0.25rem;
+            img {
+                transform: translateY(100%);
+                transition: all .5s ease-out;
+            }
+            &.active img{
+                transform: none;
+            }
+        }
+        .country-selection {
+            padding: .5rem;
+            border: solid $border-width $border-color;
+            border-radius: $border-radius;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+    }
+}
+
+
+.country-selection-modal {
+    .country-selection-item {
+        padding: .75rem 1rem;
+        margin-bottom: 1rem;
+        border-radius: $border-radius;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: all .3s ease;
+        &:hover {
+            box-shadow: $box-shadow;
+        }
+    }
+}
+.ebent-navbar {
+    border: solid 1px #e6e6e6;
+    border-width: 1px 0px 1px 0px;
+    display: flex;
+    justify-content: center;
+    .ebent-navbar-toggle {
+        padding: 14px 0;
+        margin: auto;
+        width: 30px;
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        span {
+            display: inline-block;
+            height: 3px;
+            margin: 3px 0;
+            background-color: $primary;
+            width: 100%;
+        }
+    }
+    .nav-item {
+        .nav-link {
+            color: $brand-navbar;
+            font-weight: $font-weight-bold;
+            padding: 1rem 0;
+            margin: 0 1rem;
+            position: relative;
+            z-index: 1;
+            &:visited,&:active,&:hover {
+                color: inherit;
+            }
+            &:after {
+                content: ' ';
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: -1px;
+                height: 0px;
+                background-color: $primary;
+                transition: all .3s ease;
+                z-index: 10;
+            }
+            &.active,&:hover {
+                color: $primary;
+                &:after {
+                    height: 3px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px){
+    .navbar-expand-md  {
+        .ebent-navbar-toggle {
+            display: none;
+        }
+    }
+}
